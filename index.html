@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VIT Student Academic Support</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.cc">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="brand">
+        <img src="logo.png" alt="VIT - Vellore Institute of Technology" class="site-logo">
+      </div>
+      <div class="header-right">
+        <span class="header-label">Student Academic Support</span>
+        <div class="user-chip-wrapper">
+          <button class="user-chip" id="userChip" type="button" aria-haspopup="true" aria-expanded="false" hidden>
+            <div class="avatar" id="avatarInitial">AS</div>
+            <div>
+              <div class="user-name" id="headerName">Aman Sumesh</div>
+              <div class="user-program">M.Tech (Integrated) Software Engineering</div>
+            </div>
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="user-menu-popup" id="userMenuPopup" hidden role="menu">
+            <div class="popup-user-info">
+              <div class="popup-user-name" id="popupUserName">Aman Sumesh</div>
+              <div class="popup-user-program">M.Tech (Integrated) Software Engineering</div>
+            </div>
+            <button class="popup-logout-btn" id="mobileLogoutBtn" type="button" role="menuitem">
+              <svg viewBox="0 0 24 24"><path d="M10 17l5-5-5-5M15 12H3M21 3v18"/></svg>
+              <span>Log out</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="loginScreen" class="login-layout">
+      <div class="login-brand-panel">
+        <div class="large-brand">
+          <img src="logo.png" alt="VIT - Vellore Institute of Technology" class="large-logo">
+        </div>
+        <div class="script-title">Student Academic Support</div>
+        <p class="brand-message">A simple space to keep track of your classes, attendance, assignments, and academic notifications.</p>
+        <div class="brand-accent"></div>
+      </div>
+      <div class="login-side">
+        <form id="loginForm" class="login-card">
+          <h1>Student Login</h1>
+          <p class="subtext">Sign in to your student account.</p>
+          <label class="field-label" for="regNo">Register Number</label>
+          <input class="text-input" id="regNo" placeholder="Enter register number" autocomplete="username" required>
+          <label class="field-label" for="password">Password</label>
+          <input class="text-input" id="password" type="password" placeholder="Enter password" autocomplete="current-password" required>
+          <button class="primary full" type="submit">Login</button>
+          <div id="loginError" class="error" hidden>Enter your register number and password to continue.</div>
+        </form>
+      </div>
+    </section>
+
+    <section id="portal" class="portal-layout" hidden>
+      <aside class="sidebar">
+        <div class="sidebar-label">Student Portal</div>
+        <button class="side-link active" data-page="home" title="Dashboard" aria-label="Dashboard">
+          <svg viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>
+          <span class="link-label">Dashboard</span>
+        </button>
+        <button class="side-link" data-page="academics" title="Academics &amp; Attendance" aria-label="Academics &amp; Attendance">
+          <svg viewBox="0 0 24 24"><path d="M3 4.5A2.5 2.5 0 0 1 5.5 2H12v19H5.5A2.5 2.5 0 0 0 3 23zM21 4.5A2.5 2.5 0 0 0 18.5 2H12v19h6.5A2.5 2.5 0 0 1 21 23z"/></svg>
+          <span class="link-label">Academics &amp; Attendance</span>
+        </button>
+        <button class="side-link" data-page="assignments" title="Assignments" aria-label="Assignments">
+          <svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3V2h6v1M8 8h8M8 12h8M8 16h5"/></svg>
+          <span class="link-label">Assignments</span>
+        </button>
+        <button class="side-link" data-page="alerts" title="Notifications" aria-label="Notifications">
+          <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>
+          <span class="link-label">Notifications</span>
+          <span class="nav-badge">3</span>
+        </button>
+        <button class="side-link" data-page="upload" title="Assignment Upload" aria-label="Assignment Upload">
+          <svg viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5h16v-5"/></svg>
+          <span class="link-label">Assignment Upload</span>
+        </button>
+      </aside>
+      <main class="content-area" id="pageContent"></main>
+    </section>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
